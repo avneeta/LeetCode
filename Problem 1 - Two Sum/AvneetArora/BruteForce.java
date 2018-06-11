@@ -1,3 +1,9 @@
+\*
+*Brute Force Solution: For every element check every other element for sum equal to the target
+*
+*
+\
+
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         //Brute Force
