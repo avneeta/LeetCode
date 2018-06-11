@@ -1,0 +1,34 @@
+/*
+Intution:       Create a hash table adding each number to it. 
+                itterate over all nums one by one and look for thr compliment with 9 in the hash table
+                Complexity O(n)
+*/
+
+/*
+Brute Force:    Create two arrays itterate over each element in a nested for loop and see the time's apocalypse
+*/
+
+// Brute force solution
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        
+        int a=0, b=0;        
+        for (int i=0; i<= nums.length; i++)
+        {
+            for (int j=i+1;j<nums.length;j++)
+            {
+                if (nums[i]+nums[j] == target)
+                {
+                    a=i;
+                    b=j;
+                    
+                }
+                // exactly one solution so no need to worry about zero solution case.
+                // no duplicates will help in plotting the hasttable easly
+                
+            }
+        }
+      return new int[] {a, b};   
+    
+    }//end of function
+}//end of class

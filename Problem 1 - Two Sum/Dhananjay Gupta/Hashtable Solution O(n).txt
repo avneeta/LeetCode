@@ -1,0 +1,5 @@
+/*
+Intution:       Create a hash table adding each number to it. 
+                itterate over all nums one by one and look for thr compliment with 9 in the hash table
+                Complexity O(n)
+*/
