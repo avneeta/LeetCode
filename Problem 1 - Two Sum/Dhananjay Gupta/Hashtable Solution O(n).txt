@@ -3,3 +3,23 @@ Intution:       Create a hash table adding each number to it.
                 itterate over all nums one by one and look for thr compliment with 9 in the hash table
                 Complexity O(n)
 */
+
+// Hash Table Solution
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        
+        int a=0, b=0;
+        Map <Integer , Integer> map = new HashMap<>();
+        for (int i=0; i<nums.length;i++)
+        {
+            int compliment = target - nums[i];                  //What happens if the complement turns out to be negative? Nevermind, it works.
+            if (map.containsKey(compliment))
+            {
+                a = map.get(compliment);		// since thr is just one solution so this trick works just fine.
+                b=i;
+            }
+        }
+    return new int[] {a,b};    
+    
+    }//end of function
+}//end of class
