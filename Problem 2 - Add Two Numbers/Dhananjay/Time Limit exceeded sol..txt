@@ -1,0 +1,36 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        
+        ListNode Listnode1 = l1;
+        ListNode Listnode2 = l2;
+        ListNode sumNodeHead = new ListNode(0); // 0 is the intital value of the node // This will serve as the head to track the summation List (sumNode)
+        ListNode sumNode = sumNodeHead; // This serves as a List to hold the values of summation in it's node.
+        int carry=0;
+        while (Listnode1 != null || Listnode2 != null || carry == 0) 
+        {
+            int sum = carry + ((Listnode1!=null) ? Listnode1.val : 0) + ((Listnode2!=null) ? Listnode2.val : 0);
+            carry = sum/10;
+            sumNode.next = new ListNode(sum%10);
+            sumNode = sumNode.next; // move to the next node which shall store the next element of the summation
+            if (Listnode1 !=null){ Listnode1 = Listnode1.next;}
+            if (Listnode2 !=null) {Listnode2=Listnode2.next;}
+            
+            
+        }
+        
+        if (carry>0){
+            sumNode.next = new ListNode(carry);
+        }
+    return sumNodeHead.next; //.next will let it start with the first node of the summation list without the additioal 0
+    }//end of fuction
+}//end of class
+
+
