@@ -1,0 +1,36 @@
+
+public class Solution {
+    
+public int lengthOfLongestSubstring(String s)
+    {        
+        int length = s.length();
+        int i=0;
+        int j=0;
+        int largest=0;
+        HashMap<Character, Integer> hm = new HashMap<>();
+        for (j=0;j<length;j++)
+        {
+            if (hm.containsKey(s.charAt(j)))
+            {
+                i = maximum(hm.get(s.charAt(j))+1, i); 
+                // 1 is added so as to move j one position ahead of the previous occurance of the duplicate element.
+            }
+            
+                hm.put(s.charAt(j), j); // add the character (Key)a position where it was found most recently 
+                largest = maximum(largest, j-i+1); // the current element is also to be counted therfore add 1 to j-i
+            
+        
+        }//end of loop
+        
+        return largest;
+    }// end of function 
+    
+    public static int maximum(int a, int b)
+    {
+        if (a>b) return a;
+        else return b;
+    }
+}// end of class
+
+
+
